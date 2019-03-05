@@ -1,9 +1,6 @@
 package main
 
 import (
-	"bytes"
-	"fmt"
-	"io"
 	"os"
 	"testing"
 )
