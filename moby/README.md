@@ -161,3 +161,23 @@ INFO[2019-03-11T22:21:22.555503567+01:00] API listen on /var/run/docker.sock
 ```
 
 
+
+## Running mobicli
+
+If you run dockerd from previous step, you can run basic cli tool for moby deamon:
+
+```bash
+$ mobicli --help
+Usage:
+  mobicli [command]
+
+Available Commands:
+  help        Help about any command
+  ps          list all running containers
+  start       run container
+  stop        stop container with specific name
+
+Flags:
+  -h, --help   help for mobicli
+  ```
+
