@@ -181,3 +181,40 @@ Flags:
   -h, --help   help for mobicli
   ```
 
+
+
+## Automatic way to compile binaries and run all
+
+New release is available here: https://github.com/limikmag/golang/releases/tag/%401.0
+
+After download and unpack this release you should run:
+
+If you want to do all these steps automatically you can run script as root:
+
+```bash
+
+$ ./run_from_scratch.sh 
+
+Usage:
+
+sudo ./run_from_scratch.sh [-d] [-g] [-s] [-c] [-h]
+   -d   install docker
+   -g   install git
+   -s   compile moby project
+   -c   clean environment
+   -h   print usage
+
+This script was only tested on CentOS 7.6
+
+```
+
+
+```bash
+$ sudo su
+$ systemctl stop docker
+$ export XDG_RUNTIME_DIR=/var/run
+$ ./dockerd --experimental
+```
+
+And you can use __mobicli__ tool in that way:
+

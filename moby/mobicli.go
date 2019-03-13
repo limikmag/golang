@@ -20,7 +20,7 @@ func main() {
 	var psCmd = &cobra.Command{
 		Use:   "ps",
 		Short: "list all running containers",
-		Run: func(cmd *cobra.Command, args []strigit ng) {
+		Run: func(cmd *cobra.Command, args []string) {
 			LsContainers(endpoint)
 		},
 	}
