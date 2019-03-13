@@ -20,7 +20,7 @@ func main() {
 	var psCmd = &cobra.Command{
 		Use:   "ps",
 		Short: "list all running containers",
-		Run: func(cmd *cobra.Command, args []string) {
+		Run: func(cmd *cobra.Command, args []strigit ng) {
 			LsContainers(endpoint)
 		},
 	}
@@ -101,9 +101,6 @@ func ContainerStop(docker *client.Client, containerName string) {
 	}
 	fmt.Println(containers)
 	for _, container := range containers {
-		fmt.Println("name to remove : " + containerName)
-		fmt.Println("container ID : " + container.ID)
-		fmt.Println("table " + container.Names[0])
 		if container.Names[0][1:] == containerName {
 			fmt.Print("Stopping container ", container.ID[:10], "... ")
 			if err := docker.ContainerStop(context.Background(), container.ID, nil); err != nil {
