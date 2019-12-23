@@ -18,6 +18,7 @@ func main() {
 			size, _ := cmd.Flags().GetInt("size")
 			_, err := HandleGetInput(args, size)
 			if err != nil {
+				fmt.Println()
 				fmt.Println(err)
 				return
 			}
@@ -112,4 +113,3 @@ func lsInputToCorrect(arg string) string {
 	}
 	return arg
 }
-
