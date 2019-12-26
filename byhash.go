@@ -39,7 +39,10 @@ func main() {
 	var rootCmd = &cobra.Command{Use: "byhash"}
 	getCmd.PersistentFlags().Int("size", 100, "size piece of file to print in bytes")
 	rootCmd.AddCommand(lsCmd, getCmd)
-	rootCmd.Execute()
+	err := rootCmd.Execute()
+	if err != nil {
+		panic("fatal error")
+	}
 
 }
 
@@ -112,4 +115,3 @@ func lsInputToCorrect(arg string) string {
 	}
 	return arg
 }
-

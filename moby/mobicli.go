@@ -59,8 +59,10 @@ func main() {
 	startCmd.PersistentFlags().String("name", "", "name container to run")
 	stopCmd.PersistentFlags().String("name", "", "name container to stop")
 	rootCmd.AddCommand(psCmd, startCmd, stopCmd)
-	rootCmd.Execute()
-
+	err := rootCmd.Execute()
+	if err != nil {
+		panic("fatal error")
+	}
 }
 
 func createLocalClient(url, apiVer string) (*client.Client, error) {

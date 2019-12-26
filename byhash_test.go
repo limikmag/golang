@@ -40,7 +40,10 @@ func TestHandleLsInput(t *testing.T) {
 
 	for _, args := range lstests {
 		for _, dir := range args.in {
-			os.MkdirAll(dir, os.ModePerm)
+			err := os.MkdirAll(dir, os.ModePerm)
+			if err != nil {
+				panic("fatal error")
+			}
 		}
 		code, _ := HandleLsInput(args.in)
 		if code != args.out {
@@ -92,4 +95,3 @@ func TestHandleGetInputWithSizeFlag(t *testing.T) {
 		t.Errorf("HandleLsInput(%v) != %v", 0, code)
 	}
 }
-
