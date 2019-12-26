@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"net/http"
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
@@ -63,9 +64,12 @@ func main() {
 }
 
 func createLocalClient(url, apiVer string) (*client.Client, error) {
-	return client.NewClientWithOpts(
-		client.WithHost(url),
-		client.WithVersion(apiVer),
+	clientMap := make(map[string]string)
+	return client.NewClient(
+		url,
+		apiVer,
+		&http.Client{},
+		clientMap,
 	)
 }
 
