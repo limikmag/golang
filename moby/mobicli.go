@@ -59,7 +59,7 @@ func main() {
 	startCmd.PersistentFlags().String("name", "", "name container to run")
 	stopCmd.PersistentFlags().String("name", "", "name container to stop")
 	rootCmd.AddCommand(psCmd, startCmd, stopCmd)
-	err := rootCmd.Execute()
+	err = rootCmd.Execute()
 	if err != nil {
 		panic("fatal error")
 	}
