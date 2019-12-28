@@ -40,10 +40,7 @@ func TestHandleLsInput(t *testing.T) {
 
 	for _, args := range lstests {
 		for _, dir := range args.in {
-			err := os.MkdirAll(dir, os.ModePerm)
-			if err != nil {
-				panic("fatal error")
-			}
+			os.MkdirAll(dir, os.ModePerm)
 		}
 		code, _ := HandleLsInput(args.in)
 		if code != args.out {
