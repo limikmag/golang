@@ -51,6 +51,7 @@ func TestHandleLsInput(t *testing.T) {
 			os.RemoveAll(dir)
 		}
 	}
+
 }
 
 var getTests = []struct {
