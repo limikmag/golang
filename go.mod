@@ -11,4 +11,5 @@ require (
 	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
 	github.com/spf13/cobra v0.0.5
 	golang.org/x/crypto v0.0.0-20191227163750-53104e6ec876
+	github.com/goreleaser/goreleaser v0.123.3 // indirect
 )
