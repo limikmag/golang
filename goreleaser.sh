@@ -22,7 +22,7 @@ download() {
   curl -s -L -o "$TAR_FILE" \
     "$RELEASES_URL/download/$VERSION/goreleaser_$(uname -s)_$(uname -m).tar.gz"
 }
-
+go mod tidy -v
 echo "difference go.mod"
 git diff go.mod
 echo ""
