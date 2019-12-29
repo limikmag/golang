@@ -11,9 +11,10 @@ builds:
   - amd64
 
 archives:
+-
   name_template: "byhash_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
   replacements:
-    darwin: macOS
+    darwin: macos
   wrap_in_directory: true
   files:
     - none*
