@@ -61,7 +61,7 @@ func main() {
 	rootCmd.AddCommand(psCmd, startCmd, stopCmd)
 	err = rootCmd.Execute()
 	if err != nil {
-		panic("fatal error")
+		panic("fatal error ")
 	}
 }
 
