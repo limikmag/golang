@@ -23,12 +23,14 @@ download() {
     "$RELEASES_URL/download/$VERSION/goreleaser_$(uname -s)_$(uname -m).tar.gz"
 }
 
-download
-tar -xf "$TAR_FILE" -C "$TMPDIR"
-"${TMPDIR}/goreleaser" "$@"
-
 echo "difference go.mod"
 git diff go.mod
 echo ""
 echo "difference go.sum"
 git diff go.sum
+
+download
+tar -xf "$TAR_FILE" -C "$TMPDIR"
+"${TMPDIR}/goreleaser" "$@"
+
+
