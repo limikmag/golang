@@ -11,4 +11,7 @@ builds:
   - amd64
 
 release:
-    name_template: "v{{.Version}}"
+  github:
+    owner: limikmag
+    name: golang
+  name_template: "byhash v{{.Version}}"

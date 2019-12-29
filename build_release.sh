@@ -5,4 +5,4 @@ docker run --rm --privileged \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -w /go/src/github.com/limikmag/golang \
   -e GITHUB_TOKEN=${limikmag_github_token} \
-  goreleaser/goreleaser release
+  goreleaser/goreleaser release --release-notes=/go/src/github.com/limikmag/golang/release_notes
