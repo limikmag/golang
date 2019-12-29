@@ -22,11 +22,8 @@ download() {
   curl -s -L -o "$TAR_FILE" \
     "$RELEASES_URL/download/$VERSION/goreleaser_$(uname -s)_$(uname -m).tar.gz"
 }
-go mod tidy -v
-echo "difference go.mod"
+echo "Checking for differences in go.mod and go.sum files..."
 git diff go.mod
-echo ""
-echo "difference go.sum"
 git diff go.sum
 
 download
