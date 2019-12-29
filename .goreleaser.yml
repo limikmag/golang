@@ -13,10 +13,9 @@ builds:
 archives:
   name_template: "byhash_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
   replacements:
-      darwin: macOS
+    darwin: macOS
   wrap_in_directory: true
-  archives:
-  - files:
+  files:
     - none*
 
 release:
