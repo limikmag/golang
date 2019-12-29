@@ -10,6 +10,15 @@ builds:
   goarch:
   - amd64
 
+archives:
+  name_template: "byhash_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+  replacements:
+      darwin: macOS
+  wrap_in_directory: true
+  archives:
+  - files:
+    - none*
+
 release:
   github:
     owner: limikmag
