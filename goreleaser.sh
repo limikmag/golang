@@ -1,4 +1,5 @@
 #!/bin/sh
+
 set -e
 
 TAR_FILE="/tmp/goreleaser.tar.gz"
