@@ -1,4 +1,7 @@
 package singleton
+
+import "sync"
+
 /****************************************************************************************
 Singleton pattern represents a global state and most of the time reduces testability.   *
 *****************************************************************************************/
@@ -6,8 +9,8 @@ Singleton pattern represents a global state and most of the time reduces testabi
 type singleton map[string]string
 
 var (
-    once sync.Once
-    instance singleton
+	once     sync.Once
+	instance singleton
 )
 
 func New() singleton {
@@ -17,4 +20,3 @@ func New() singleton {
 
 	return instance
 }
-
