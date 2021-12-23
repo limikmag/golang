@@ -1,4 +1,4 @@
-package shortestsubstring
+package easy
 
 import (
 	"fmt"
